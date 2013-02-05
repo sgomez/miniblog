@@ -1,0 +1,18 @@
+{% extends 'base.twig' %}
+
+{% block stylesheets %}
+        <link href="{{ app.request.basepath }}/css/jekyll.css" rel="stylesheet" type="text/css" />
+{% endblock %}
+
+{% block content %}
+
+	<header class="masthead">
+	  <p>
+	    <strong>Mi primer blog</strong><br>
+	    Un blog muy simple para demostrar la funcionalidad de Silex.
+	  </p>
+	</header>
+	
+	{% block container %}{% endblock %}
+
+{% endblock %}

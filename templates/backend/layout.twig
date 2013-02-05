@@ -1,0 +1,43 @@
+{% extends 'base.twig' %}
+
+{% block stylesheets %}
+{{ parent() }}
+<style type="text/css">
+	body {
+		padding-top: 60px;
+		padding-bottom: 40px;
+	}
+</style>
+{% endblock %}
+
+{% block content %}
+	
+	<div class="navbar navbar-inverse navbar-fixed-top">
+	  <div class="navbar-inner">
+	    <div class="container">
+	      <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	      </a>
+	      <a class="brand" href="#">Miniblog</a>
+	      <div class="nav-collapse collapse">
+	        <ul class="nav">
+	          <li class="active"><a href="{{ url('backend') }}">Inicio</a></li>
+	          <li><a href="{{ url('entry_new') }}">Añadir artículo</a></li>
+	          <li><a href="{{ url('homepage') }}">Ver web</a></li>
+	        </ul>
+	      </div><!--/.nav-collapse -->
+	    </div>
+	  </div>
+	</div>
+
+	{% block container %}{% endblock %}
+
+{% endblock %}
+
+{% block javascripts %}
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script src="{{ app.request.basepath }}/js/bootstrap.min.js"></script>
+    <script src="{{ app.request.basepath }}/ckeditor/ckeditor.js"></script>
+{% endblock %}

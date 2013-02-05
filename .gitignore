@@ -1,0 +1,4 @@
+/cache/
+/config/schema.sqlite
+/vendor/
+silex.log

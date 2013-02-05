@@ -1,0 +1,24 @@
+{% extends 'backend/layout.twig' %}
+
+{% block title     'Crear nueva entrada' %}
+
+{% block container %}
+<div id="core" class="container clearfix">
+    <div id="primary-content" class="clearfix">
+        <h2>Crear nueva entrada</h2>
+
+        <form action="{{ path('entry_new') }}" method="post">
+            {{ form_widget(form) }}
+         
+            <input type="submit" name="submit" value="Guardar" />
+        </form>
+    </div>
+</div>
+{% endblock %}
+
+{% block javascripts %}
+{{ parent() }}
+<script>
+    CKEDITOR.replace( 'form[content]' );
+</script>
+{% endblock %}

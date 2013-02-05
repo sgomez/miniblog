@@ -1,0 +1,47 @@
+{% extends 'backend/layout.twig' %}
+
+{% block title     'Backend - Portada' %}
+
+{% block container %}
+
+<div id="core" class="container clearfix">
+    <div id="primary-content" class="clearfix">
+        <h2>Lista de artículos</h2>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th class="span3">Título</th>
+                    <th>Contenido</th>
+                    <th class="span3">Fecha creación</th>
+                    <th class="span2">Acciones</th>
+                </tr>
+            </thead>
+
+            <tbody>
+            {% for entry in entries %}
+                <tr>
+                    <td>{{ entry.id }}</td>
+                    <td>{{ entry.title }}</td>
+                    <td>{{ entry.content | striptags | truncate(200) }}</td>
+                    <td>{{ entry.created_at | date('d/m/Y H:M:s') }}</td>
+                    <td>
+                        <a href="{{ path('entry_edit', { 'id': entry.id }) }}">
+                            Editar
+                        </a> | 
+                        <a href="{{ path('entry_delete', { 'id': entry.id }) }}">
+                            Borrar
+                        </a>
+                    </td>
+                </tr>
+            {% else %}
+                <tr>
+                    <td colspan="4">Aún no hay artículos creados</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,18 @@
+{% extends 'frontend/layout.twig' %}
+
+{% block title     'Frontend - Portada' %}
+
+{% block container %}
+
+<div id="core" class="container clearfix">
+    {% for entry in entries %}
+    <div class="post">
+        <h1>{{ entry.title }}</h1>
+        <span class="post-date">{{ entry.created_at | date }}</span>
+        <p>{{ entry.content | raw }}</p>
+    </div>
+    {% else %}
+        <h1>Aún no hay artículos creados</h1>
+    {% endfor %}
+</div>
+{% endblock %}
