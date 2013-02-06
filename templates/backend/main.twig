@@ -24,7 +24,7 @@
                 <tr>
                     <td>{{ entry.id }}</td>
                     <td>{{ entry.title }}</td>
-                    <td>{{ entry.content | striptags | truncate(200) }}</td>
+                    <td>{{ entry.content | striptags | truncate(200) | raw }}</td>
                     <td>{{ entry.created_at | date('d/m/Y H:M:s') }}</td>
                     <td>
                         <a href="{{ path('entry_edit', { 'id': entry.id }) }}">
