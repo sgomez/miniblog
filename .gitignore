@@ -1,4 +1,5 @@
 /cache/
 /config/schema.sqlite
 /vendor/
+composer.lock
 silex.log
