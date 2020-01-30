@@ -36,3 +36,5 @@ este ejemplo sencillo puedes resolverlo dando permisos de escritura a "otros":
 $ chmod o+w config
 $ chmod o+w config/schema.sqlite
 ```
+
+Unlicensed
